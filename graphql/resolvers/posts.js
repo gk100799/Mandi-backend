@@ -1,6 +1,7 @@
 const { transformResponse } = require('./resolverHelper')
 const Post = require('../../models/posts')
 
+
 module.exports = {
     posts: () => {
         return Post.find()
