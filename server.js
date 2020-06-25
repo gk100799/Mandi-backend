@@ -1,11 +1,10 @@
-import express from 'express';
-import graphqlHTTP from 'express-graphql';
-import mongoose from 'mongoose'
-import "regenerator-runtime/runtime";
+const express = require('express')
+const graphqlHTTP = require('express-graphql')
+const mongoose = require('mongoose')
 
-import graphqlSchema from './graphql/schema/index'
-import graphqlResolvers from './graphql/resolvers/index'
-import isAuth from './middleware/is-auth'
+const graphqlSchema =require('./graphql/schema/index')
+const graphqlResolvers =require('./graphql/resolvers/index')
+const isAuth = require('./middleware/is-auth')
 
 const port = process.env.PORT || 3000
 const app = express();

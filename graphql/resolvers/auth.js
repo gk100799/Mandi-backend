@@ -1,8 +1,8 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken'
+const bcrypt = require('bcryptjs')
+const jwt =require('jsonwebtoken')
 
-import { transformResponse } from './resolverHelper'
-import User from '../../models/user';
+const { transformResponse } = require('./resolverHelper')
+const User = require('../../models/user')
 
 module.exports = {
     createUser: args => {

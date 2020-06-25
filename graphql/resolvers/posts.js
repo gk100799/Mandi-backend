@@ -1,5 +1,5 @@
-import { transformResponse } from './resolverHelper'
-import Post from '../../models/posts';
+const { transformResponse } = require('./resolverHelper')
+const Post = require('../../models/posts')
 
 module.exports = {
     posts: () => {

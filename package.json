@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon start.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,18 +22,11 @@
   },
   "homepage": "https://github.com/gk100799/Mandi-backend#readme",
   "dependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/register": "^7.10.3",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^15.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.20",
-    "regenerator-runtime": "^0.13.5"
-  },
-  "presets": [
-    "@babel/preset-env"
-  ]
+    "mongoose": "^5.9.20"
+  }
 }

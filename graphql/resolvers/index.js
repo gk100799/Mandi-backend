@@ -1,5 +1,5 @@
-import authResolver from './auth'
-import postResolver from './posts'
+const authResolver = require('./auth')
+const postResolver = require('./posts')
 
 module.exports = {
     ...authResolver,
