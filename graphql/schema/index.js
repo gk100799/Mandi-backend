@@ -3,9 +3,11 @@ import { buildSchema } from 'graphql';
 module.exports = buildSchema(`
     type Post {
         _id: ID!
-        username: String!
+        userId: String!
         typeofpost: String!
         description: String!
+        createdAt: String!
+        updatedAt: String!
     }
 
     type User {
@@ -15,10 +17,12 @@ module.exports = buildSchema(`
         firstname: String!
         lastname: String!
         email: String!
+        createdAt: String!
+        updatedAt: String!
     }
 
     input PostInput {
-        username: String!
+        userId: String!
         typeofpost: String!
         description: String!
     }
@@ -31,12 +35,20 @@ module.exports = buildSchema(`
         email: String!
     }
 
+    type AuthData  {
+        userId:ID!
+        token: String!
+        tokenExpiration: Int!
+    }
+
     type Query {
         posts: [Post!]!
+        login(username: String!, password: String!): AuthData
     }
 
     type Mutation {
-        createPost(postInput: PostInput): Post
         createUser(userInput: UserInput): User
+        createPost(postInput: PostInput): Post
+        deletePost(postId: ID!): Post!
     }
 `);

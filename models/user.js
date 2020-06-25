@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     username: {
@@ -23,6 +23,8 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-});
+},
+    { timestamps: true }
+);
 
 module.exports = mongoose.model('User', userSchema);
