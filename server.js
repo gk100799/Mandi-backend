@@ -18,7 +18,7 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@mandidb-sdbcm.mongodb.net/${process.env.MONGO_DBNAME}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://gopal:123@mandidb-sdbcm.mongodb.net/mandi_db?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(port, () => console.log("Server running at port 4000"));
   })
