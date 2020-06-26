@@ -8,18 +8,22 @@ const postSchema = new Schema({
         required: true,
         ref: 'User'
     },
-    typeofpost: {
+    post_type: {
         type: String,
-        enum: ['audio', 'image', 'video'],
+        enum: ['audio', 'image', 'video', 'links', 'text'],
         required: true
     },
-    description: {
+    interest: {
+        type: String,
+        ref: 'Interests'
+    },
+    title: {
         type: String,
     },
-    upvotes: {
-        type: Number,
+    title: {
+        type: String,
     },
-    downvotes: {
+    votes: {
         type: Number,
     },
     comments: {

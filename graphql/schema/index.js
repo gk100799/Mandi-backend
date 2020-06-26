@@ -4,10 +4,16 @@ module.exports = buildSchema(`
     type Post {
         _id: ID!
         userId: String!
-        typeofpost: String!
-        description: String!
+        post_type: String!
+        interest: ID!
+        title: String!
         createdAt: String!
         updatedAt: String!
+    }
+
+    type Interests {
+        _id: ID!
+        interest: String!
     }
 
     type User {
@@ -23,8 +29,9 @@ module.exports = buildSchema(`
 
     input PostInput {
         userId: String!
-        typeofpost: String!
-        description: String!
+        post_type: String!
+        title: String!
+        interest: ID!
     }
 
     input UserInput {
@@ -50,5 +57,6 @@ module.exports = buildSchema(`
         createUser(userInput: UserInput): User
         createPost(postInput: PostInput): Post
         deletePost(postId: ID!): Post!
+        createInterests(interest: String!): Interests
     }
 `);

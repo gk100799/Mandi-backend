@@ -24,7 +24,7 @@ module.exports = {
                 return user.save();
             })
             .then(result => {
-                return transformResponse(result);
+                return { ...result._doc, _id: result.id, createdAt: dateToString(result._doc.createdAt), updatedAt: dateToString(result._doc.updatedAt) };
             })
             .catch(err => {
                 throw err;

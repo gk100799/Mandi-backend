@@ -1,7 +1,6 @@
 const { transformResponse } = require('./resolverHelper')
 const Post = require('../../models/posts')
 
-
 module.exports = {
     posts: () => {
         return Post.find()
@@ -16,13 +15,14 @@ module.exports = {
     },
 
     createPost: (args, req) => {
-        if (!req.isAuth) {
-            throw new Error('Unauthorizised access')
-        }
+        // if (!req.isAuth) {
+        //     throw new Error('Unauthorizised access')
+        // }
         const post = new Post({
             userId: args.postInput.userId,
-            typeofpost: args.postInput.typeofpost,
-            description: args.postInput.description
+            post_type: args.postInput.post_type,
+            title: args.postInput.title,
+            interest: args.postInput.interest,
         });
         return post.save()
             .then(result => {
